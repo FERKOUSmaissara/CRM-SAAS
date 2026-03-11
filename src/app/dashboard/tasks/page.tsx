@@ -132,7 +132,7 @@ export default function TasksPage() {
             onChange={(e) => setStatusFilter(e.target.value as TaskStatusFilter)}
             className="input-modern h-10 w-auto text-sm text-gray-700"
           >
-            {statusOptions.map((s) => (
+            {statusOptions.map((s: string) => (
               <option key={s} value={s}>
                 {s === "all" ? "Tous les statuts" : s === "pending" ? "En attente" : s === "in_progress" ? "En cours" : s === "done" ? "Terminée" : s.replace(/_/g, " ")}
               </option>
