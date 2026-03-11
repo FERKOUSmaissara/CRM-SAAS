@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc; /* slate-50 */
+  --foreground: #0f172a; /* slate-800 */
 }
 
 @theme inline {
@@ -12,15 +12,79 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --background: #020617; /* slate-950 */
+  --foreground: #f1f5f9; /* slate-100 */
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
+
+/* Buttons */
+/* Primary button utility */
+.btn-primary {
+  @apply text-white px-4 py-2 rounded-lg shadow transition-all duration-300 ease-in-out;
+  background: #0d3d36;
+}
+.btn-primary:hover { @apply brightness-105 scale-101; }
+.btn-primary:active { transform: scale(.98); }
+
+/* Inputs */
+input, textarea, select {
+  border: 1px solid #e2e8f0; /* slate-200 */
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  color: white;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 8px 24px rgba(45,212,191,0.16);
+  border-color: #2dd4bf;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #9ca3af;
+  opacity: 1;
+}
+
+/* Modern input utility */
+.input-modern {
+  @apply w-full bg-slate-800 text-white placeholder-gray-400 border border-slate-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all duration-200;
+}
+
+/* Utility transitions */
+.transition-all { transition: all 0.3s ease-in-out; }
+
+/* Card / container */
+.card { @apply bg-white rounded-2xl p-4 shadow-sm border border-gray-100 transition-all duration-200 hover:shadow-md; }
+
+/* Table card and rows */
+.table-card { @apply bg-white rounded-xl shadow-lg border border-slate-200 overflow-hidden transition-all; }
+.table-row { @apply hover:bg-gray-50 transition-colors duration-150; }
+
+/* Zebra rows for tables */
+table tr:nth-child(even) td { background-color: rgba(15,23,42,0.01); }
+
+/* Skeleton */
+.skeleton { @apply animate-pulse h-24 bg-slate-200 dark:bg-slate-800 rounded-xl; }
+
+/* Modal */
+.modal-crm {
+  @apply bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl shadow-xl p-6;
+}
+
+/* KPI card */
+.kpi-card { @apply bg-white rounded-2xl p-5 shadow-sm border border-gray-100 transition-all duration-200 hover:shadow-md; }
+.kpi-title { @apply text-sm text-slate-600 font-medium flex items-center gap-2; }
+.kpi-value { @apply mt-3 text-3xl font-bold text-slate-800; }
+
