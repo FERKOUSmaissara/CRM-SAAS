@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 import Input from "@/components/ui/Input"
 import Button from "@/components/ui/Button"
 
@@ -49,9 +48,13 @@ export default function Login() {
             {loading ? 'Connexion…' : 'Se connecter'}
           </Button>
 
-          <div className="flex justify-between text-sm">
-            <Link href="/signup" className="text-ferkous-500 hover:underline">S&apos;inscrire</Link>
-            <Link href="/forgot" className="text-ferkous-500 hover:underline">Mot de passe oublié</Link>
+          <div className="flex justify-between mt-4 text-sm text-gray-300">
+            <a href="/signup" className="text-cyan-400 hover:underline hover:text-cyan-300">
+              S&apos;inscrire
+            </a>
+            <a href="/forgot-password" className="text-cyan-400 hover:underline hover:text-cyan-300">
+              Mot de passe oublié ?
+            </a>
           </div>
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
