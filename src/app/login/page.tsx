@@ -49,10 +49,10 @@ export default function Login() {
           </Button>
 
           <div className="flex justify-between mt-4 text-sm text-gray-300">
-            <a href="/signup" className="text-cyan-400 hover:underline hover:text-cyan-300">
+            <a href="/signup" className="text-white hover:underline hover:text-gray-200">
               S&apos;inscrire
             </a>
-            <a href="/forgot-password" className="text-cyan-400 hover:underline hover:text-cyan-300">
+            <a href="/forgot-password" className="text-white hover:underline hover:text-gray-200">
               Mot de passe oublié ?
             </a>
           </div>
