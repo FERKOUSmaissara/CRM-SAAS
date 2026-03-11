@@ -134,6 +134,14 @@ npm run lint     # Analyse le code avec ESLint
 3. Ajoutez toutes les variables d'environnement dans *Project > Settings > Environment Variables*
 4. Déployez  Vercel détecte automatiquement Next.js
 
+## Application déployée
+
+Le CRM est accessible en ligne :
+
+https://crm-saas-mj2p.vercel.app
+
+Le projet est automatiquement déployé via Vercel avec intégration CI/CD depuis GitHub.
+
 ### Configuration du webhook Brevo (optionnel)
 
 Dans votre compte Brevo, configurez un webhook pointant vers :
